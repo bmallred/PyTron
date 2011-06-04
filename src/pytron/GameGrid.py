@@ -93,9 +93,14 @@ class GameGrid:
         # Need to do something cool so there can be more
         # than just two programs playing (possibly use Id).
         
+        # TODO: Add pause handling (i.e. K_SPACE).
+        # TODO: Add additional exit handling (i.e. K_ESCAPE).
+        # TODO: Add speed handling per program.
+        
         for e in Events:
             if e.type == QUIT:
                 self._Programs = []
+                #pygame.quit()
             elif e.type == KEYDOWN:
                 # Program one navigation.
                 if e.key == K_a:

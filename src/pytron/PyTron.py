@@ -8,7 +8,7 @@ from pytron.locals.Heading import Heading
 # Build the game grid.
 #
 
-gameGrid = GameGrid(250, 250)
+gameGrid = GameGrid(640, 480)
 gameGrid.SetFrameRate(30)
 
 #

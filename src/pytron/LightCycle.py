@@ -13,6 +13,7 @@ class LightCycle:
         self.RibbonColor = Color
         self.Direction = Direction
         self._LightRibbon = [(StartX, StartY)]
+        self._Speed = 4
     
     def ChangeDirection(self, NewHeading):
         '''
@@ -68,13 +69,16 @@ class LightCycle:
         
         # Determine which direction to move.
         if self.Direction == Heading.NORTH:
-            self._LightRibbon.append((currentPosition[0], currentPosition[1] - 1))
+            self._LightRibbon.append((currentPosition[0], currentPosition[1] - self._Speed))
         elif self.Direction == Heading.EAST:
-            self._LightRibbon.append((currentPosition[0] + 1, currentPosition[1]))
+            self._LightRibbon.append((currentPosition[0] + self._Speed, currentPosition[1]))
         elif self.Direction == Heading.SOUTH:
-            self._LightRibbon.append((currentPosition[0], currentPosition[1] + 1))
+            self._LightRibbon.append((currentPosition[0], currentPosition[1] + self._Speed))
         else:
-            self._LightRibbon.append((currentPosition[0] - 1, currentPosition[1]))
+            self._LightRibbon.append((currentPosition[0] - self._Speed, currentPosition[1]))
         
         # Return the light ribbon.
         return self._LightRibbon
+    
+    def SetSpeed(self, NewSpeed):
+        self._Speed = NewSpeed

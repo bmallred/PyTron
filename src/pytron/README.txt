@@ -36,10 +36,18 @@ light cycle use the following keys:
 
 Issues:
 
-[Unresolved] Once each programs light ribbon has reach a large number the redrawing of the screen
+[WorksForMe]
+Problem: Once each programs light ribbon has reach a large number the redrawing of the screen
 eats up resources. This causes a delay in reaction time and makes the game appear sluggish. Possibly
 need to implement some sort of caching or only draw the new portions of the ribbon.
 
-[Unresolved] Never got around to implementing different light cycle colors.
+Change: Added speed property to LightCycle as well as SetSpeed() method to
+adjust it. This may not have "solved" the problem per se, but it lightened
+the amount of items in the lists which may have been causing the performance
+degradation.
 
-[Unresolved] Sound.
+[Unresolved]
+Problem: Never got around to implementing different light cycle colors.
+
+[Unresolved]
+Problem: Sound.
