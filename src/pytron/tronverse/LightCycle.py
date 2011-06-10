@@ -1,11 +1,12 @@
-from pytron.locals.Heading import Heading
+from tronverse.Color import Color
+from tronverse.Heading import Heading
 
-class LightCycle:
+class LightCycle(object):
     '''
     Light cycle vehicle
     '''
     
-    def __init__(self, Color, Direction, StartX, StartY):
+    def __init__(self, Color, Direction = Heading.NORTH, StartX = 0, StartY = 0):
         '''
         Initializes a new instance of the LightCycle class.
         '''

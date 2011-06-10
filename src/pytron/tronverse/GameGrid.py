@@ -1,8 +1,9 @@
 import pygame
 from pygame.locals import *
-from pytron.locals.Heading import Heading
+from tronverse.Color import Color
+from tronverse.Heading import Heading
 
-class GameGrid:
+class GameGrid(object):
     '''
     The Game Grid is where programs compete for their survival.
     '''
@@ -24,7 +25,7 @@ class GameGrid:
         self._Clock = pygame.time.Clock()
         self._Screen = pygame.display.set_mode((self.Width, self.Height))
         self._Background = pygame.Surface(self._Screen.get_size())
-        self._Background.fill((0, 0, 0))
+        self._Background.fill(Color.BLACK)
     
     def DoWork(self):
         # Tick-Tock.
@@ -38,7 +39,7 @@ class GameGrid:
         
         for prog in self._Programs:
             # Move and draw.
-            self._DrawLightRibbon(prog.LightCycle.Move())
+            self._DrawLightRibbon(prog.LightCycle.Move(), prog.LightCycle.RibbonColor)
             
             # Collision checking.
             if prog.LightCycle.CollisionWithWall(self.Width, self.Height):
@@ -77,12 +78,12 @@ class GameGrid:
         
         self._FrameRate = Rate
     
-    def _DrawLightRibbon(self, Vertices):
+    def _DrawLightRibbon(self, Vertices, Color = Color.RED):
         '''
         Draws the light ribbon.
         '''
         
-        pygame.draw.lines(self._Screen, (255, 0, 0), False, Vertices, 1)
+        pygame.draw.lines(self._Screen, Color, False, Vertices, 1)
     
     def _HandleEvents(self, Events):
         '''

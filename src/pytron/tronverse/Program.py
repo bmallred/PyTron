@@ -1,6 +1,7 @@
-from pytron.LightCycle import LightCycle
+from tronverse.Color import Color
+from tronverse.LightCycle import LightCycle
 
-class Program:
+class Program(object):
     '''
     A user program
     '''
@@ -36,5 +37,18 @@ class Program:
         '''
         Use the baton to generate the light cycle.
         '''
-        
-        self.LightCycle = LightCycle(self._Id, Direction, StartX, StartY)
+
+        color = Color.RED
+
+        if self._Id == 0:
+            color = Color.RED
+        elif self._Id == 1:
+            color = Color.BLUE
+        elif self._Id == 2:
+            color = Color.GREEN
+        elif self._Id == 3:
+            color = Color.YELLOW
+        elif self._Id == 4:
+            color = Color.WHITE
+
+        self.LightCycle = LightCycle(color, Direction, StartX, StartY)

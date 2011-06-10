@@ -1,6 +1,7 @@
 Program:	PyTron
 Author:		Bryan M. Allred
 Created:	06/03/2011
+Modified:   06/10/2011
 
 Dependencies:
 	Python 2.7
@@ -15,6 +16,18 @@ Acknowledgements:
 	PEP008 "Style Guide for Python Code".
 	Pygame documentation.
 	Alec Thomas on the sweet Enum() function found on StackOverflow (I felt I needed enumerations!).
+
+Running the game:
+
+Windows
+
+	Assuming you are running Python 2.7 and it is installed at C:\Python27\ just run the "run.bat"
+	batch file. If Python is at a different version or located somewhere else please edit the batch
+	file accordingly.
+
+Linux (only tested on Ubuntu)
+
+	Execute the shell script "run.sh". This **should** take care of everything.
 
 Directions:
 
@@ -46,8 +59,11 @@ adjust it. This may not have "solved" the problem per se, but it lightened
 the amount of items in the lists which may have been causing the performance
 degradation.
 
-[Unresolved]
+[Fixed]
 Problem: Never got around to implementing different light cycle colors.
+
+Change: Changed the enumeration of colors to RBG values. The color is determined by the program
+number (or ID) and is fixed once the program uses his or her baton.
 
 [Unresolved]
 Problem: Sound.
